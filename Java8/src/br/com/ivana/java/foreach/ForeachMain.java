@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ForeachMain {
@@ -67,13 +68,14 @@ public class ForeachMain {
 
 		System.out.println("Maximum of age in the list of people: "
 				+ listaPessoas.stream().mapToInt(p -> p.getAge()).max().getAsInt());
-
+		
 		// Convert Stream to list, set or map
 		Map<Integer, List<Pessoa>> map = listaPessoas.stream().collect(Collectors.groupingBy(Pessoa::getAge));
 		System.out.println("Convert Stream to map");
 		map.get(18).forEach(p -> System.out.println("Name: " + p.getName() + ", age:" + p.getAge()));
 
-		
+		Optional<Float> x = Optional.empty();
+		x.get();
 		
 	}
 }
